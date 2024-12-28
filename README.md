@@ -19,6 +19,19 @@ Currently, two official plugins are available:
 - Created redux store with userSlice
 - Implemented SignOut
 - Update Profile API Call
+- If user is not logged in rediret it to login page and vice versa
+- Unsubscribe to the onAuthStateChanged callback
+- Adding hard coded values to constants files
+- Register for TMDB API and create an APP and get Access token 
+- Get data from TMDB now playing movie list API
+- Custom Hooks for Now Playing movies
+- Created a movie slice
+- Updated the store with movies data
+- Planning for main container and secondary container
+- Fetched Data for trailer videos
+- Update Store with trailer video data
+- Embedded the youtube video and make it autoplay and mute
+- Tailwind classes to make main container awesome
 
 # Features - 
 - Logged IN / SignUP Page 
