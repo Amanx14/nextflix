@@ -32,6 +32,8 @@ Currently, two official plugins are available:
 - Update Store with trailer video data
 - Embedded the youtube video and make it autoplay and mute
 - Tailwind classes to make main container awesome
+- Build Secondary Component
+- Added multiple movie lists (trending, popular, upcoming)
 
 # Features - 
 - Logged IN / SignUP Page 
