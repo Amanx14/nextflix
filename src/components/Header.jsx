@@ -6,11 +6,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import { onAuthStateChanged } from "firebase/auth"
 import { addUser, removeUser } from '../utils/userSlice';
 import { LOGO } from '../utils/constant';
+import { toggleGPTSearchView } from '../utils/gptSlice';
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
+
+  const handleGPTSearch = ()=> {
+    // toggle GPT Search component
+    dispatch(toggleGPTSearchView());
+  }
 
   useEffect(() => {
     const unsubsribe = onAuthStateChanged(auth, (user) => {
@@ -40,7 +46,7 @@ const Header = () => {
     });
   }
   return (
-    <div className='absolute flex justify-between w-screen px-8 py-2 bg-gradient-to-b from-black z-10'>
+    <div className='absolute flex justify-between w-full px-8 py-2 bg-gradient-to-b from-black z-10'>
       <img
         className='w-44'
         src={LOGO} alt="Netflix Logo" />
@@ -48,6 +54,17 @@ const Header = () => {
       {
         user && (
           <div className='flex items-center gap-2'>
+            <select>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+            <button className='p-2 rouneded bg-purple-500 rounded mx-4 font-semibold text-white'
+            onClick={handleGPTSearch}
+            >GPT Search</button>
             <img className="h-10 rounded-md" src={user?.photoURL} alt="photoURL" />
             <button className='bg-red-600 text-white p-2 rounded font-semibold' onClick={handleSignOut}>Sign Out</button>
           </div>
